@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>提取图片主色调 | 一周css</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="
+
+偶尔会下载豆瓣app到手机里使用下，看见书影音tabbar页下，随便点击一个链接，进入某一个电影或者书籍之类的详情页，可以看见背景色都是不同的。这个设计效果看着挺有意思的，如是想这个在web端该如何实现。
+
+豆瓣效果图
+豆瓣详情页效果图
+
+解决办法
+canvas的getImageData可以获取图片的每一个像素点的信 ...">
+    
+    <link rel="preload" href="/assets/css/0.styles.255ca1d4.css" as="style"><link rel="preload" href="/assets/js/app.be034a27.js" as="script"><link rel="preload" href="/assets/js/6.79d5c46f.js" as="script"><link rel="preload" href="/assets/js/3.c91b2139.js" as="script"><link rel="preload" href="/assets/js/15.b1fe8df1.js" as="script"><link rel="prefetch" href="/assets/js/10.6fe4843b.js"><link rel="prefetch" href="/assets/js/11.8d961b0e.js"><link rel="prefetch" href="/assets/js/12.715b1291.js"><link rel="prefetch" href="/assets/js/13.01ea55b7.js"><link rel="prefetch" href="/assets/js/14.4bd306a8.js"><link rel="prefetch" href="/assets/js/16.729e18fc.js"><link rel="prefetch" href="/assets/js/17.38f0f1f9.js"><link rel="prefetch" href="/assets/js/4.0638fcad.js"><link rel="prefetch" href="/assets/js/5.3658a1f7.js"><link rel="prefetch" href="/assets/js/7.e95ee600.js"><link rel="prefetch" href="/assets/js/8.d77bb3ea.js"><link rel="prefetch" href="/assets/js/9.df681701.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.83765843.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.255ca1d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">一周css </a></div> <div class="header-right-wrap"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <ul class="nav"><li class="nav-item"><a href="/" class="nav-link">首页</a></li><li class="nav-item"><a href="/web/" class="nav-link router-link-active">闲话前端</a></li><li class="nav-item"><a href="/history/" class="nav-link">碎言历史</a></li><li class="nav-item"><a href="/about/" class="nav-link">关于我</a></li><li class="nav-item"><a href="https://github.com/webjunjun" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li></ul></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">一周css </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">首页</a></li><li class="mobile-nav-item"><a href="/web/" class="nav-link router-link-active">闲话前端</a></li><li class="mobile-nav-item"><a href="/history/" class="nav-link">碎言历史</a></li><li class="mobile-nav-item"><a href="/about/" class="nav-link">关于我</a></li><li class="mobile-nav-item"><a href="https://github.com/webjunjun" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        提取图片主色调
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">刘军</span> <span itemprop="address">   in 武汉</span></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2021-06-08T00:00:00.000Z">
+      2021-06-08
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-33a4af96><a href="/tag/canvas" data-v-33a4af96><span data-v-33a4af96>canvas</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h3 id="起因"><a href="#起因" class="header-anchor">#</a> 起因</h3> <p>偶尔会下载豆瓣app到手机里使用下，看见书影音tabbar页下，随便点击一个链接，进入某一个电影或者书籍之类的详情页，可以看见背景色都是不同的。这个设计效果看着挺有意思的，如是想这个在web端该如何实现。</p> <h3 id="豆瓣效果图"><a href="#豆瓣效果图" class="header-anchor">#</a> 豆瓣效果图</h3> <p><img src="/wechat/douban_example.png" alt="豆瓣详情页效果图"></p> <h3 id="解决办法"><a href="#解决办法" class="header-anchor">#</a> 解决办法</h3> <p>canvas的getImageData可以获取图片的每一个像素点的信息。通过将所有的rgb值相加，得到三个颜色通道的总值。再将总值除去所有的像素点之和，就可以得到平均每一个通道的值。这样就拿到一张图片的主色调了。</p> <h3 id="代码"><a href="#代码" class="header-anchor">#</a> 代码</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;获取图片主色&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;poster_wrap&quot;&gt;
+    &lt;canvas id=&quot;poster&quot;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    let oImg = new Image();
+    oImg.src = 'img/001.jpg';// 请替换成自己准备的图片
+    let oCanvas = document.querySelector('#poster');
+    let ctx = oCanvas.getContext('2d');
+    oImg.onload = function () {
+        const { width, height } = oImg;
+        let sum_r = 0, sum_g = 0, sum_b = 0;
+        let r = null, g = null, b = null;
+        oCanvas.width = width;
+        oCanvas.height = height;
+        const totalPixel = width * height;
+        ctx.drawImage(oImg, 0, 0);
+        const imgData = ctx.getImageData(0, 0, oCanvas.width, oCanvas.height);
+        for (let i = 0; i &lt; imgData.data.length; i += 4) {
+            r = imgData.data[i];
+            g = imgData.data[i + 1];
+            b = imgData.data[i + 2];
+            sum_r += r;
+            sum_g += g;
+            sum_b += b;
+        }
+        const avg_r = Math.round(sum_r / totalPixel);
+        const avg_g = Math.round(sum_g / totalPixel);
+        const avg_b = Math.round(sum_b / totalPixel);
+
+        // 主色调
+        const mainColor = `rgb(${avg_r}, ${avg_g}, ${avg_b})`;
+        document.querySelector('body').style.backgroundColor = mainColor;
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><h3 id="效果图"><a href="#效果图" class="header-anchor">#</a> 效果图</h3> <p><img src="/wechat/getbg.png" alt="获取图片主色调"></p> <h3 id="尾声"><a href="#尾声" class="header-anchor">#</a> 尾声</h3> <p>这个需要在服务器上才能运行。</p></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h3 active"><a href="#起因" title="起因">起因</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#豆瓣效果图" title="豆瓣效果图">豆瓣效果图</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#解决办法" title="解决办法">解决办法</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#代码" title="代码">代码</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#效果图" title="效果图">效果图</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#尾声" title="尾声">尾声</a></div></div></div></div> <footer class="footer" data-v-e1783072><div class="footer-center" data-v-e1783072><p data-v-e1783072>Designed &amp; Powerd by liujun</p> <p data-v-e1783072>Copyright© 2021 一周css</p></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.be034a27.js" defer></script><script src="/assets/js/6.79d5c46f.js" defer></script><script src="/assets/js/3.c91b2139.js" defer></script><script src="/assets/js/15.b1fe8df1.js" defer></script>
+  </body>
+</html>
