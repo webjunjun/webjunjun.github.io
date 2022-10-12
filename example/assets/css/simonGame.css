@@ -1,0 +1,205 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.75;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body,p,h1,h2,h3,ul,ol,dl,dd,figure,menu{
+  margin: 0;
+}
+
+ul,ol,input,textarea,figure,menu {
+  padding: 0;
+}
+
+main,details {
+  display: block;
+}
+
+h1,h2,h3 {
+  font-size: 100%;
+  font-weight: 400;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+/* simon game */
+.main{
+  width: 320px;
+  height: 500px;
+  margin: 50px auto 0;
+  background-color: #eee;
+}
+.simon_wrap{
+  width: 100%;
+  height: 100%;
+}
+.simon_circle{
+  width: 300px;
+  height: 300px;
+  border: 10px solid #000;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.inner_circle{
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  border: 10px solid #000;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 95px;
+  left: 95px;
+}
+.circle_section{
+  width: 145px;
+  height: 145px;
+  border: 5px solid #000;
+  position: absolute;
+  cursor: pointer;
+}
+.one{
+  top: 0;
+  left: 0;
+  border-left: none;
+  border-top: none;
+  border-top-left-radius: 100%;
+  background-color: #f36422;
+}
+#circle0{
+  background-color: #dc591d;
+}
+.two{
+  top: 0;
+  right: 0;
+  border-right: none;
+  border-top: none;
+  border-top-right-radius: 100%;
+  background-color: #8cc63f;
+}
+#circle1{
+  background-color: #79ab38;
+}
+.three{
+  bottom: 0;
+  left: 0;
+  border-left: none;
+  border-bottom: none;
+  border-bottom-left-radius: 100%;
+  background-color: #00aeef;
+}
+#circle2{
+  background-color: #0298d0;
+}
+.four{
+  bottom: 0;
+  right: 0;
+  border-right: none;
+  border-bottom: none;
+  border-bottom-right-radius: 100%;
+  background-color: #fec20e;
+}
+#circle3{
+  background-color: #e6b00c;
+}
+.count_area{
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  background-color: #333;
+  font-size: 24px;
+  color: #f36422;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 6px;
+  margin-top: 30px;
+}
+.simon_opt li{
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  margin-top: 16px;
+}
+.simon_opt li span{
+  display: inline-block;
+  vertical-align: 16px;
+  margin-right: 6px;
+}
+.checkbox {
+  position: relative;
+  display: inline-block;
+}
+.checkbox input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkbox label{
+  width: 90px;
+  height: 42px;
+  background: #ccc;
+  position: relative;
+  display: inline-block;
+  border-radius: 46px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.checkbox label:after{
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  left: 0;
+  top: -5px;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.checkbox input:checked + label{
+  background: #376ecb;
+}
+.checkbox input:checked + label:after {
+  left: 40px;
+  background: #4285F4;
+}
+.checkbox input:hover + label:after {
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+.tips_txt{
+  font-size: 24px;
+  color: #f36422;
+  text-align: center;
+}

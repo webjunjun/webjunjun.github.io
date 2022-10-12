@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>有趣的鼠标悬浮模糊效果</title>
+  <link rel="stylesheet" href="/example/assets/css/reset.css">
+  <style>
+    #demo figure{
+      position: relative;
+    }
+    #demo figure img{
+      width: 100%;
+      transition: filter 1.5s;
+    }
+    #demo figcaption{
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .wrap{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .wrap::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 0;
+      border: 4px solid #fff;
+      border-width: 0 4px;
+      overflow: hidden;
+      visibility: hidden;
+      box-sizing: border-box;
+      transition: all .8s;
+    }
+    .wrap::after{
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 0;
+      height: 100%;
+      border: 4px solid #fff;
+      border-width: 4px 0;
+      overflow: hidden;
+      visibility: hidden;
+      box-sizing: border-box;
+      transition: all .8s;
+    }
+    .wrap .inner-txt{
+      position: absolute;
+      z-index: 2;
+      opacity: 0;
+      font-size: 40px;
+      font-weight: 600;
+      text-align: center;
+      background-image: linear-gradient(to right, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-size: 200% 100%;
+      animation: masked-animation 4s infinite linear;
+      transition: opacity .8s;
+    }
+    .wrap .inner-txt a{
+      font-size: 20px;
+    }
+    @-webkit-keyframes masked-animation{
+        0% {background-position:right bottom;}
+        100% {background-position:left bottom;}
+    }
+    #demo figure:hover .wrap::before{
+      height: 100%;
+      visibility: visible;
+      top: 0;
+    }
+    #demo figure:hover .wrap::after{
+      width: 100%;
+      visibility: visible;
+      left: 0;
+    }
+    #demo figure:hover .inner-txt{
+      opacity: 1;
+    }
+    #demo figure:hover img{
+      filter: blur(2px);
+    }
+  </style>
+</head>
+<body>
+  <div id="demo">
+    <figure>
+      <img src="/example/assets/img/191-bigskin-1.jpg" alt="image" />
+      <figcaption>
+        <div class="wrap">
+          <p class="inner-txt">
+            <span class="masked">Welcome to webjunjun</span><br />
+            <a href="https://github.com/webjunjun">点击进入</a>
+          </p>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</body>
+</html>

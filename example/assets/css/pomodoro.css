@@ -1,0 +1,161 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.75;
+  background-color: #ea705a;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body,p,h1,h2,h3,ul,ol,dl,dd,figure,menu{
+  margin: 0;
+}
+
+ul,ol,input,textarea,figure,menu {
+  padding: 0;
+}
+
+main,details {
+  display: block;
+}
+
+h1,h2,h3 {
+  font-size: 100%;
+  font-weight: 400;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+/* Pomodoro Timer */
+.main{
+  width: 600px;
+  margin: 40px auto 0;
+}
+.main h1{
+  font-size: 3em;
+  font-weight: 600;
+  text-align: center;
+}
+.setting-time{
+  display: flex;
+  justify-content: space-around;
+}
+.setting-header{
+  font-size: 1.4em;
+}
+.setting-btn{
+  font-size: 4em;
+  font-style: normal;
+  vertical-align: middle;
+  cursor: pointer;
+}
+i.plus-btn{
+  font-size: 3em;
+}
+.setting-num{
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  font-size: 3em;
+  text-align: center;
+  vertical-align: -18px;
+}
+.control-btn{
+  text-align: center;
+  margin: 20px auto;
+}
+.control-btn button{
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 18px;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 1em;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.control-btn button:focus{
+  outline: none;
+}
+.reset-btn{
+  border: 1px solid #009688;
+  background-color: #009688;
+}
+.start-btn{
+  border: 1px solid #1E9FFF;
+  background-color: #1E9FFF;
+}
+.stop-btn{
+  border: 1px solid #FFB800;
+  background-color: #FFB800;
+}
+.move-interface{
+  display: flex;
+  justify-content: space-around;
+}
+.ring-area{
+  position: relative;
+  width: 170px;
+  height: 170px;
+}
+.ring{
+  width: 150px;
+  height: 150px;
+  border: 10px solid #e7e7e7;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.left-half,.right-half,.mask{
+  width: 150px;
+  height: 150px;
+  border: 10px solid #99CC00;
+  border-radius: 50%;
+  clip: rect(0,85px,170px,0);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+div.mask{
+  display: block;
+  border: 10px solid #e7e7e7 ;
+}
+.time-num{
+  width: 150px;
+  font-size: 3em;
+  text-align: center;
+  line-height: 1em;
+  position: absolute;
+  top: 40px;
+  left: 10px;
+}
+.time-num em{
+  font-size: 20px;
+  font-style: normal;
+  display: block;
+}

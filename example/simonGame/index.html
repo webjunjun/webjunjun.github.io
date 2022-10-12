@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>西蒙游戏</title>
+  <link rel="stylesheet" href="/example/assets/css/simonGame.css">
+</head>
+<body>
+  <div class="main">
+    <div class="simon_wrap">
+      <div class="simon_circle">
+        <div class="circle_section one"></div>
+        <div class="circle_section two"></div>
+        <div class="circle_section three"></div>
+        <div class="circle_section four"></div>
+        <div class="inner_circle">
+          <div class="count_area">0</div>
+        </div>
+      </div>
+      <ul class="simon_opt">
+        <li>
+          <span class="">ON/OFF</span>
+          <div class="checkbox">
+            <input type="checkbox" class="start_btn">
+            <label></label>
+          </div>
+        </li>
+        <li>
+          <span>STRICT</span>
+          <div class="checkbox">
+            <input type="checkbox" class="strict_btn" disabled>
+            <label></label>
+          </div>
+        </li>
+      </ul>
+      <div class="tips_area">
+        <p class="tips_txt"></p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/example/assets/js/simonGame.js"></script>
+</body>
+</html>

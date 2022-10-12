@@ -1,0 +1,89 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.75;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body,p,h1,h2,h3,ul,ol,dl,dd,figure,menu{
+  margin: 0;
+}
+
+ul,ol,input,textarea,figure,menu {
+  padding: 0;
+}
+
+main,details {
+  display: block;
+}
+
+h1,h2,h3 {
+  font-size: 100%;
+  font-weight: 400;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.magnifier_box{
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 400px;
+  height: 400px;
+  border: 1px solid #ccc;
+  position: relative;
+}
+.magnifier_box .original_box{
+  position: absolute;
+  left: 400px;
+  top: -1px;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  display: none;
+}
+.thumbnail_img{
+  text-align: center;
+}
+.thumbnail_img img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.thumbnail_mask{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 0, 0, .5);
+  cursor: move;
+  display: none;
+}
+.original_box img{
+  position: absolute;
+}

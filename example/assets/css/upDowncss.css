@@ -1,0 +1,199 @@
+/* 通用样式 */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Helvetica Neue";
+  font-size: 16px;
+  color: #333;
+  line-height: 1.75;
+  /* 禁止选中文字 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+ul,
+ol,
+dl,
+dd,
+figure,
+menu {
+  margin: 0;
+}
+
+ul,
+ol,
+input,
+textarea,
+figure,
+menu {
+  padding: 0;
+}
+
+main,
+details {
+  display: block;
+}
+
+/* 统一标题的表现形式 */
+h1,
+h2,
+h3 {
+  font-size: 100%;
+  font-weight: 400;
+}
+
+/* 合并表格边框和相邻单元格的边框间的距离为0 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 清除无序列表圆点样式 */
+ul {
+  list-style: none;
+}
+
+/* 用于浮动元素的父元素 */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both
+}
+
+.clearfix {
+  /* 兼容IE6、7 */
+  *zoom: 1
+}
+
+/* 占位符placeholder的颜色改变 */
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #999;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #999;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #999;
+}
+
+.text-wrap {
+  /* 针对中文换行 */
+  white-space: pre-wrap;
+  /* 以字母为依据换行，数字也可以 */
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+/* 文本溢出，省略号显示 宽度自控制 */
+.text-tradition {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* 兼容Opera浏览器 */
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 选择文字后的背景色 */
+body ::selection {
+  color: #333;
+  background-color: #fef032;
+  text-shadow: none;
+}
+
+/* 去掉IE浏览器文本框的小X和密码框的眼睛，（只能IE10以上）*/
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+}
+
+/* 整个滚动条 */
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* 滚动条轨道 */
+body::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+/* 滚动条上的滚动滑块 */
+body::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #7b6f6f;
+}
+
+/* 页面样式 */
+.card_box {
+  width: 1200px;
+  height: 400px;
+  margin: 100px auto 0;
+  background-color: #94cf62;
+}
+
+@keyframes upDownAni {
+  1% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.card_box .card {
+  width: 200px;
+  height: 274px;
+  overflow: hidden;
+  float: left;
+  margin-left: 100px;
+  margin-top: 63px;
+  transition: all .4s;
+}
+
+.card_box .card:first-child {
+  margin-left: 50px;
+  animation: upDownAni 5s ease-in-out 0s infinite;
+  background-color: #f8bb3c;
+}
+
+.card_box .card:nth-child(2) {
+  animation: upDownAni 4s ease-in-out 0s infinite;
+  background-color: #f79764;
+}
+
+.card_box .card:nth-child(3) {
+  animation: upDownAni 4.5s ease-in-out 0s infinite;
+  background-color: #7fbdf8;
+}
+
+.card_box .card:nth-child(4) {
+  animation: upDownAni 5.5s ease-in-out 0s infinite;
+  background-color: #56af75;
+}
+
+.card_box .card:hover {
+  animation-play-state: paused;
+  box-shadow: 0 0 15px #fff;
+}

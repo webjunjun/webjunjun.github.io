@@ -1,0 +1,163 @@
+html {
+  font-family: '微软雅黑', 'Microsoft YaHei', Arial, SimHei, sans-serif;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+ul,
+ol,
+dl,
+dd,
+figure,
+menu {
+  margin: 0;
+}
+
+ul,
+ol,
+input,
+textarea,
+figure,
+menu {
+  padding: 0;
+}
+
+main,
+details {
+  display: block;
+}
+
+/* 统一标题的表现形式 */
+h1,
+h2,
+h3 {
+  font-size: 100%;
+  font-weight: 400;
+}
+
+/* 合并表格边框和相邻单元格的边框间的距离为0 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 清除无序列表圆点样式 */
+ul {
+  list-style: none;
+}
+
+/* 用于浮动元素的父元素 */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both
+}
+
+.clearfix {
+  /* 兼容IE6、7 */
+  *zoom: 1
+}
+
+/* 占位符placeholder的颜色改变 */
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #999;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #999;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #999;
+}
+
+/* 文本溢出，省略号显示 */
+.text-tradition {
+  width: 27em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* 兼容Opera浏览器 */
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 现代浏览器和移动端多行文本显示省略号 */
+.text-modern {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 选择文字后的背景色 */
+body ::selection {
+  color: #fff;
+  background-color: #f06000;
+}
+
+/* 去掉IE浏览器文本框的小X和密码框的眼睛，（只能IE10以上）*/
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+}
+
+/* 禁止选中文字 */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+.fly-out {
+  width: 940px;
+  margin: 100px auto 0;
+}
+
+.fo-item {
+  float: left;
+  width: 298px;
+  height: 198px;
+  background-color: #FFF;
+  border: 1px solid #EAEEF1;
+  border-radius: 3px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.fo-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.fo-scale:hover {
+  /*缩放*/
+  transform: scale(1.05, 1.05);
+  box-shadow: 0 0 40px 4px rgba(0, 0, 0, .2);
+  z-index: 111;
+}
+
+.fo-translate:hover {
+  /*偏移*/
+  transform: translate(-1px, -4px);
+  box-shadow: 0 24px 30px -12px rgba(0, 0, 0, .2);
+  z-index: 111;
+}

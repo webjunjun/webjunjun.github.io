@@ -1,0 +1,161 @@
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Helvetica Neue";
+  font-size: 16px;
+  color: #333;
+  line-height: 1.75;
+  /* 禁止选中文字 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+ul,
+ol,
+dl,
+dd,
+figure,
+menu {
+  margin: 0;
+}
+
+ul,
+ol,
+input,
+textarea,
+figure,
+menu {
+  padding: 0;
+}
+
+main,
+details {
+  display: block;
+}
+
+/* 统一标题的表现形式 */
+h1,
+h2,
+h3 {
+  font-size: 100%;
+  font-weight: 400;
+}
+
+/* 合并表格边框和相邻单元格的边框间的距离为0 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 清除无序列表圆点样式 */
+ul {
+  list-style: none;
+}
+
+/* 用于浮动元素的父元素 */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both
+}
+
+.clearfix {
+  /* 兼容IE6、7 */
+  *zoom: 1
+}
+
+/* 占位符placeholder的颜色改变 */
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #999;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #999;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #999;
+}
+
+.text-wrap {
+  /* 针对中文换行 */
+  white-space: pre-wrap;
+  /* 以字母为依据换行，数字也可以 */
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+/* 文本溢出，省略号显示 宽度自控制 */
+.text-tradition {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* 兼容Opera浏览器 */
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 选择文字后的背景色 */
+body ::selection {
+  color: #333;
+  background-color: #fef032;
+  text-shadow: none;
+}
+
+/* 去掉IE浏览器文本框的小X和密码框的眼睛，（只能IE10以上）*/
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+}
+
+/* 整个滚动条 */
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* 滚动条轨道 */
+body::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+/* 滚动条上的滚动滑块 */
+body::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #7b6f6f;
+}
+
+.img-box {
+  width: 800px;
+  height: 368px;
+  overflow: hidden;
+  margin: 100px auto;
+}
+
+.img-box img {
+  width: 100%;
+  transition: filter 1s linear;
+}
+
+.img-box .unload-img {
+  filter: blur(20px);
+  transform: scale(1);
+}
+
+.img-box img.img-loaded {
+  filter: none;
+}

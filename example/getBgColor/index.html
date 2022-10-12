@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取图片主色</title>
+</head>
+<body>
+<div class="poster_wrap">
+    <canvas id="poster"></canvas>
+</div>
+<script>
+    let oImg = new Image();
+    oImg.src = '../assets/img/001.jpg';// 请替换成自己准备的图片
+    let oCanvas = document.querySelector('#poster');
+    let ctx = oCanvas.getContext('2d');
+    oImg.onload = function () {
+        const { width, height } = oImg;
+        let sum_r = 0, sum_g = 0, sum_b = 0;
+        let r = null, g = null, b = null;
+        oCanvas.width = width;
+        oCanvas.height = height;
+        const totalPixel = width * height;
+        ctx.drawImage(oImg, 0, 0);
+        const imgData = ctx.getImageData(0, 0, oCanvas.width, oCanvas.height);
+        for (let i = 0; i < imgData.data.length; i += 4) {
+            r = imgData.data[i];
+            g = imgData.data[i + 1];
+            b = imgData.data[i + 2];
+            sum_r += r;
+            sum_g += g;
+            sum_b += b;
+        }
+        const avg_r = Math.round(sum_r / totalPixel);
+        const avg_g = Math.round(sum_g / totalPixel);
+        const avg_b = Math.round(sum_b / totalPixel);
+
+        // 主色调
+        const mainColor = `rgb(${avg_r}, ${avg_g}, ${avg_b})`;
+        document.querySelector('body').style.backgroundColor = mainColor;
+    }
+</script>
+</body>
+</html>

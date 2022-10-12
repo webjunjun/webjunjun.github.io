@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="/example/assets/css/pomodoro.css">
+</head>
+<body>
+  <div class="main">
+    <h1>Pomodoro Timer</h1>
+    <div class="setting-time">
+      <section>
+        <p class="setting-header">BREAK LENGTH</p>
+        <i class="setting-btn minus-btn">-</i>
+        <span class="setting-num break-num">5</span>
+        <i class="setting-btn plus-btn">+</i>
+      </section>
+      <section>
+        <p class="setting-header">SESSION LENGTH</p>
+        <i class="setting-btn minus-btn">-</i>
+        <span class="setting-num session-num">25</span>
+        <i class="setting-btn plus-btn">+</i>
+      </section>
+    </div>
+    <div class="control-btn">
+      <button class="reset-btn">Reset</button>
+      <button class="start-btn">Start</button>
+      <button class="stop-btn">Stop</button>
+    </div>
+    <div class="move-interface">
+      <section class="time-interface">
+        <div class="ring-area ring-hours">
+          <div class="ring"></div>
+          <div class="left-half"></div>
+          <div class="right-half"></div>
+          <div class="mask"></div>
+          <p class="time-num">
+            <span class="hours-num">00</span>
+            <em>Hours</em>
+          </p>
+        </div>
+      </section>
+      <section class="time-interface">
+        <div class="ring-area ring-minutes">
+          <div class="ring"></div>
+          <div class="left-half"></div>
+          <div class="right-half"></div>
+          <div class="mask"></div>
+          <p class="time-num">
+            <span class="minutes-num">25</span>
+            <em>Minutes</em>
+          </p>
+        </div>
+      </section>
+      <section class="time-interface">
+        <div class="ring-area ring-seconds">
+          <div class="ring"></div>
+          <div class="left-half"></div>
+          <div class="right-half"></div>
+          <div class="mask"></div>
+          <p class="time-num">
+            <span class="seconds-num">00</span>
+            <em>Seconds</em>
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/example/assets/js/pomodoro.js"></script>
+</body>
+</html>
